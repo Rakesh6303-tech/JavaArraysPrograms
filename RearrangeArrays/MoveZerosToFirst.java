@@ -1,5 +1,7 @@
-import java.util.*;
 
+Sample Input : 0, 2, 3, 1, 0, 5, 0, 3, 5, 0
+    Output : 0, 0, 0, 0, 2, 3, 1, 5, 3, 5
+import java.util.*;
 public class Demo {
     public static void main(String args[]) {
         int ar[] = {0, 2, 3, 1, 0, 5, 0, 3, 5, 0};
