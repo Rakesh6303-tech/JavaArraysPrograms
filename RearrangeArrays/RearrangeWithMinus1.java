@@ -20,6 +20,7 @@ public class RearrangeWithMinus1 {
 	}
 	static void RearrangeArraysWithMinus1(int ar [])
 	{
+		// Picking && Placing Elements
 		int i=ar.length-1,j=ar.length-1; // loop starts from Ending
 		while(i>=0)  
 		{
