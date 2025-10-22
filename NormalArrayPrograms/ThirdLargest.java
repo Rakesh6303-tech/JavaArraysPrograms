@@ -1,41 +1,54 @@
-package com.rakhi;
-import java.util.Scanner;
+package ConditionPrograms;
+import java.util.*;
+
 public class ThirdLargest {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
-		int ar []  = new int [n];
-		for(int i=0;i<ar.length;i++)
-		{
-			ar[i]=scan.nextInt();
-		}
-		int res = ThirdLargest(ar,n);
-		System.out.println(res);
-	}
-	static int ThirdLargest(int ar [],int n)
-	{
-		int max1 = Integer.MIN_VALUE;
-		int max2 = Integer.MIN_VALUE;
-		int max3 = Integer.MIN_VALUE;
-		for(int num:ar)
-		{
-			if(num>max1)
-			{
-				max3 = max2;
-				max2 = max1;
-				max1 = num;
-			}
-			else if(num > max2 && num!=max1)
-			{
-				max3=max2;
-				max2=num;
-			}
-			else if(num>max3 && num!=max1 && num!=max2)
-			{
-				max3=num;
-			}
-		}
-		return max3;
-	}
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);  // Create Scanner object for user input
+        int n = scan.nextInt();                 // Read the number of elements
+        int ar[] = new int[n];                  // Declare an array of size n
+
+        // Take array input from user
+        for (int i = 0; i < n; i++) {
+            ar[i] = scan.nextInt();             // Read each element
+        }
+
+        // Call the method to find third largest element
+        ThirdLargest(ar);
+    }
+
+    static void ThirdLargest(int ar[]) {
+        // Initialize first, second, and third largest variables 
+        // with the smallest possible integer value
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        int third = Integer.MIN_VALUE;
+
+        // Traverse through the array elements
+        for (int i = 0; i < ar.length; i++) {
+            int num = ar[i]; // current element
+
+            // If current number is greater than the first largest
+            if (num > first) {
+                // Shift first and second down
+                third = second;
+                second = first;
+                first = num;
+            }
+            // If current number is smaller than first but greater than second
+            else if (num > second && num != first) {
+                // Shift second to third
+                third = second;
+                second = num;
+            }
+            // If current number is smaller than first and second but greater than third
+            else if (num > third && num != first && num != second) {
+                third = num;
+            }
+        }
+
+        // Print the third largest number
+        System.out.println(third);
+    }
 
 }
