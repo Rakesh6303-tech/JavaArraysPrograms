@@ -1,3 +1,6 @@
+input :  10
+5 12 13 14 9 2 3 4 5 8
+ output : 4
 package ConsecativeArray;
 import java.util.*;
 public class LongestConsecativeSubarray {
