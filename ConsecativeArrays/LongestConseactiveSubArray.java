@@ -3,7 +3,7 @@ input :  10
  output : 4
 package ConsecativeArray;
 import java.util.*;
-public class LongestConsecativeSubarray {
+public class LongestConsecativeSubarrayLength {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
